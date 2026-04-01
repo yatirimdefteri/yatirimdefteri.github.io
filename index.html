@@ -54,13 +54,10 @@
     .hero {
       background: #0b1120;
       color: white;
-      padding: 4rem 4rem 3.5rem;
+      text-align: center;
+      padding: 4rem 2rem 3.5rem;
       border-bottom: 1px solid rgba(255,255,255,0.06);
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
     }
 
     .hero::after {
@@ -74,43 +71,31 @@
       background: #c9a84c;
     }
 
-    .hero-sol {
-      flex: 1;
-      text-align: center;
-    }
-
     .hero-tag {
       display: block;
       color: #f0f4f8;
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       font-weight: 500;
       letter-spacing: 3px;
       text-transform: uppercase;
       margin-bottom: 0.8rem;
     }
 
-    .hero p.aciklama {
+    .hero-aciklama {
       font-size: 0.88rem;
-      color: #5a6a80;
+      color: #8a9ab5;
       font-weight: 300;
       letter-spacing: 0.2px;
+      margin-bottom: 2.5rem;
     }
 
-    .hero-sag {
-      flex: 0 0 auto;
-      text-align: right;
-      border-left: 1px solid rgba(255,255,255,0.08);
-      padding-left: 3rem;
-    }
-
-    .hero-sag p {
+    .hero-slogan {
       font-family: 'Fraunces', serif;
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       color: #c9c9c9;
       font-style: italic;
       font-weight: 300;
       line-height: 1.4;
-      max-width: 280px;
     }
 
     .container {
@@ -204,13 +189,9 @@
   </header>
 
   <div class="hero">
-    <div class="hero-sol">
-      <span class="hero-tag">Yatırım Rehberi</span>
-      <p class="aciklama">Yatırım dünyasını sade, anlaşılır ve derinlikli bir şekilde keşfedin.</p>
-    </div>
-    <div class="hero-sag">
-      <p>Bilgi de bir yatırımdır.</p>
-    </div>
+    <span class="hero-tag">Yatırım Rehberi</span>
+    <p class="hero-aciklama">Yatırım dünyasını sade, anlaşılır ve derinlikli bir şekilde keşfedin.</p>
+    <p class="hero-slogan">Bilgi de bir yatırımdır.</p>
   </div>
 
   <div class="container">
