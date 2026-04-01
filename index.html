@@ -4,25 +4,86 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yatırım Defteri</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Georgia', serif; background: #f9f7f4; color: #2c2c2c; }
+
+    header {
+      background: #1a1a2e;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 { font-size: 2.5rem; letter-spacing: 2px; }
+    header p { margin-top: 0.5rem; color: #aaa; font-style: italic; }
+
+    nav {
+      background: #16213e;
+      text-align: center;
+      padding: 0.8rem;
+    }
+    nav a {
+      color: #e0e0e0;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+    nav a:hover { color: #f0c040; }
+
+    .container {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .yazi-karti {
+      background: white;
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-left: 4px solid #f0c040;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .yazi-karti h2 { font-size: 1.4rem; margin-bottom: 1rem; color: #1a1a2e; }
+    .yazi-karti p { line-height: 1.8; color: #555; margin-bottom: 1rem; }
+    .uyari { font-size: 0.85rem; color: #999; font-style: italic; }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #1a1a2e;
+      color: #666;
+      font-size: 0.85rem;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ZİYARETÇİLER BUNLARI GÖRÜR -->
+  <header>
+    <h1>Yatırım Defteri</h1>
+    <p>Bilgi de bir yatırımdır.</p>
+  </header>
 
-  <h1>Yatırım Defteri</h1>
-  <!-- Site başlığı — istersen değiştir -->
+  <nav>
+    <a href="#">Ana Sayfa</a>
+    <a href="#">Borsa</a>
+    <a href="#">Döviz & Altın</a>
+    <a href="#">Hakkında</a>
+  </nav>
 
-  <p>Bilgi de bir yatırımdır.</p>
-  <!-- Slogan — istersen değiştir -->
+  <div class="container">
+    <div class="yazi-karti">
+      <h2>Yatırım Nedir? Başlangıç İçin Bilmeniz Gereken Her Şey</h2>
+      <p>Yatırım, sahip olduğunuz paranın zaman içinde daha fazla değer kazanması amacıyla bir varlığa, araca veya fikre yönlendirilmesidir. Kısaca: paranızı çalıştırmaktır.</p>
+      <p>Paranızı yastık altında tuttuğunuzda enflasyon onu her yıl eritir. Yatırım yapmak, paranızın satın alma gücünü korumak ve artırmak için zorunlu bir adımdır.</p>
+      <p class="uyari">Bu içerik bilgi amaçlıdır, yatırım tavsiyesi değildir.</p>
+    </div>
+  </div>
 
-  <hr>
-
-  <h2>Yatırım Nedir? Başlangıç İçin Bilmeniz Gereken Her Şey</h2>
-  <!-- Yazı başlığı -->
-
-  <p>Yatırım, sahip olduğunuz paranın zaman içinde daha fazla değer kazanması amacıyla bir varlığa, araca veya fikre yönlendirilmesidir. Kısaca: paranızı çalıştırmaktır.</p>
-
-  <p><em>Bu içerik bilgi amaçlıdır, yatırım tavsiyesi değildir.</em></p>
+  <footer>
+    <p>© 2026 Yatırım Defteri — Tüm hakları saklıdır.</p>
+  </footer>
 
 </body>
 </html>
