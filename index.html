@@ -25,13 +25,22 @@
     }
 
     .logo {
-      font-family: 'Fraunces', serif;
-      font-size: 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
       color: #ffffff;
-      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    .logo span { color: #c9a84c; }
+    .logo-ayrac {
+      width: 1px;
+      height: 16px;
+      background: rgba(255,255,255,0.25);
+      display: inline-block;
+    }
 
     nav a {
       text-decoration: none;
@@ -54,10 +63,12 @@
     .hero {
       background: #0b1120;
       color: white;
-      text-align: center;
-      padding: 4rem 2rem 3.5rem;
+      padding: 4rem 4rem 3.5rem;
       border-bottom: 1px solid rgba(255,255,255,0.06);
       position: relative;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
     }
 
     .hero::after {
@@ -71,10 +82,14 @@
       background: #c9a84c;
     }
 
+    .hero-orta {
+      text-align: center;
+    }
+
     .hero-tag {
       display: block;
       color: #f0f4f8;
-      font-size: 0.85rem;
+      font-size: 0.95rem;
       font-weight: 500;
       letter-spacing: 3px;
       text-transform: uppercase;
@@ -82,20 +97,21 @@
     }
 
     .hero-aciklama {
-      font-size: 0.88rem;
+      font-size: 0.95rem;
       color: #8a9ab5;
       font-weight: 300;
       letter-spacing: 0.2px;
-      margin-bottom: 2.5rem;
     }
 
     .hero-slogan {
       font-family: 'Fraunces', serif;
-      font-size: 1.5rem;
-      color: #c9c9c9;
+      font-size: 1.1rem;
+      color: #6a7a90;
       font-style: italic;
       font-weight: 300;
       line-height: 1.4;
+      text-align: right;
+      padding-bottom: 0.2rem;
     }
 
     .container {
@@ -179,7 +195,11 @@
 <body>
 
   <header>
-    <div class="logo">Yatırım<span>.</span>Defteri</div>
+    <div class="logo">
+      <span>Yatırım</span>
+      <span class="logo-ayrac"></span>
+      <span>Defteri</span>
+    </div>
     <nav>
       <a href="#">Ana Sayfa</a>
       <a href="#">Borsa</a>
@@ -189,9 +209,11 @@
   </header>
 
   <div class="hero">
-    <span class="hero-tag">Yatırım Rehberi</span>
-    <p class="hero-aciklama">Yatırım dünyasını sade, anlaşılır ve derinlikli bir şekilde keşfedin.</p>
-    <p class="hero-slogan">Bilgi de bir yatırımdır.</p>
+    <div class="hero-orta">
+      <span class="hero-tag">Yatırım Rehberi</span>
+      <p class="hero-aciklama">Yatırım dünyasını sade, anlaşılır ve derinlikli bir şekilde keşfedin.</p>
+    </div>
+    <p class="hero-slogan">Bilgi de bir<br>yatırımdır.</p>
   </div>
 
   <div class="container">
