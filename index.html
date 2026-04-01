@@ -25,21 +25,33 @@
     }
 
     .logo {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #ffffff;
-      letter-spacing: 2px;
-      text-transform: uppercase;
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
+    .logo-bold {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
     .logo-ayrac {
       width: 1px;
-      height: 16px;
-      background: rgba(255,255,255,0.25);
+      height: 18px;
+      background: rgba(255,255,255,0.2);
       display: inline-block;
+    }
+
+    .logo-italic {
+      font-family: 'Fraunces', serif;
+      font-size: 1.4rem;
+      font-style: italic;
+      font-weight: 300;
+      color: #e2e8f0;
+      letter-spacing: 0.5px;
     }
 
     nav a {
@@ -111,6 +123,7 @@
       font-weight: 300;
       line-height: 1.4;
       text-align: right;
+      white-space: nowrap;
       padding-bottom: 0.2rem;
     }
 
@@ -196,9 +209,9 @@
 
   <header>
     <div class="logo">
-      <span>Yatırım</span>
+      <span class="logo-bold">Yatırım</span>
       <span class="logo-ayrac"></span>
-      <span>Defteri</span>
+      <span class="logo-italic">Defteri</span>
     </div>
     <nav>
       <a href="#">Ana Sayfa</a>
@@ -213,7 +226,7 @@
       <span class="hero-tag">Yatırım Rehberi</span>
       <p class="hero-aciklama">Yatırım dünyasını sade, anlaşılır ve derinlikli bir şekilde keşfedin.</p>
     </div>
-    <p class="hero-slogan">Bilgi de bir<br>yatırımdır.</p>
+    <p class="hero-slogan">Bilgi de bir yatırımdır.</p>
   </div>
 
   <div class="container">
