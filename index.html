@@ -64,12 +64,13 @@
     /* ARAÇLAR */
     .arac-karti { background: #ffffff; border: 1px solid #e8e8e3; border-radius: 4px; padding: 2.8rem; margin-bottom: 1.5rem; }
     .arac-karti h2 { font-family: 'Fraunces', serif; font-size: 1.5rem; color: #0b1120; margin-bottom: 0.5rem; font-weight: 400; }
-    .arac-karti .arac-aciklama { font-size: 0.88rem; color: #8a9ab5; margin-bottom: 2rem; font-weight: 300; }
+    .arac-aciklama { font-size: 0.88rem; color: #8a9ab5; margin-bottom: 2rem; font-weight: 300; }
+
     .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.5rem; }
     .form-grup { display: flex; flex-direction: column; gap: 6px; }
-    .form-grup label { font-size: 0.78rem; font-weight: 500; color: #666; text-transform: uppercase; letter-spacing: 1px; }
+    .form-grup label { font-size: 0.72rem; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 1.2px; }
     .form-grup input {
-      padding: 0.7rem 1rem;
+      padding: 0.75rem 1rem;
       border: 1px solid #e0e0da;
       border-radius: 4px;
       font-size: 0.95rem;
@@ -79,33 +80,98 @@
       outline: none;
       transition: border-color 0.2s;
     }
-    .form-grup input:focus { border-color: #c9a84c; }
+    .form-grup input:focus { border-color: #c9a84c; background: #fff; }
+
     .hesapla-btn {
       width: 100%;
-      padding: 0.9rem;
+      padding: 0.95rem;
       background: #0b1120;
       color: #ffffff;
       border: none;
       border-radius: 4px;
-      font-size: 0.88rem;
-      font-weight: 500;
-      letter-spacing: 1.5px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 2px;
       text-transform: uppercase;
       cursor: pointer;
       transition: background 0.2s;
     }
     .hesapla-btn:hover { background: #1a2a40; }
-    .sonuc-alan { display: none; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #f0f0ec; }
+
+    .sonuc-alan { display: none; margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid #f0f0ec; }
     .sonuc-alan.goster { display: block; }
-    .sonuc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
-    .sonuc-kutu { background: #f5f4f0; border-radius: 4px; padding: 1.2rem; text-align: center; }
-    .sonuc-kutu.vurgulu { background: #0b1120; }
-    .sonuc-etiket { font-size: 0.7rem; font-weight: 500; color: #999; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.5rem; }
-    .sonuc-vurgulu .sonuc-etiket { color: #8a9ab5; }
-    .sonuc-deger { font-family: 'Fraunces', serif; font-size: 1.5rem; color: #0b1120; font-weight: 400; }
-    .sonuc-kutu.vurgulu .sonuc-etiket { color: #8a9ab5; }
-    .sonuc-kutu.vurgulu .sonuc-deger { color: #c9a84c; }
-    .sonuc-not { font-size: 0.78rem; color: #b0b0a8; font-style: italic; }
+
+    .sonuc-satir {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .sonuc-kutu {
+      flex: 1;
+      background: #f8f7f4;
+      border: 1px solid #e8e8e3;
+      border-radius: 4px;
+      padding: 1.4rem 1.2rem;
+      text-align: center;
+    }
+
+    .sonuc-operator {
+      font-size: 1.4rem;
+      color: #c9a84c;
+      font-weight: 300;
+      padding: 0 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .sonuc-ok {
+      font-size: 1.6rem;
+      color: #0b1120;
+      padding: 0 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .sonuc-kutu-buyuk {
+      flex: 1.2;
+      background: #0b1120;
+      border: 1px solid #0b1120;
+      border-radius: 4px;
+      padding: 1.6rem 1.2rem;
+      text-align: center;
+    }
+
+    .sonuc-etiket {
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.6rem;
+    }
+
+    .sonuc-kutu-buyuk .sonuc-etiket { color: #5a6a80; }
+
+    .sonuc-deger {
+      font-family: 'Fraunces', serif;
+      font-size: 1.4rem;
+      color: #0b1120;
+      font-weight: 400;
+    }
+
+    .sonuc-kutu-buyuk .sonuc-deger {
+      font-size: 1.6rem;
+      color: #c9a84c;
+    }
+
+    .sonuc-yuzde {
+      font-size: 0.75rem;
+      color: #1d9e75;
+      font-weight: 500;
+      margin-top: 0.3rem;
+    }
+
+    .sonuc-not { font-size: 0.75rem; color: #b0b0a8; font-style: italic; }
 
     footer { background: #0b1120; text-align: center; padding: 2rem; font-size: 0.78rem; color: #3a4a5c; letter-spacing: 0.5px; border-top: 1px solid rgba(255,255,255,0.04); }
     footer span { color: #c9a84c; }
@@ -205,7 +271,6 @@
   <div id="araclar" class="sayfa">
     <div class="container">
       <p class="bolum-baslik">Hesaplama Araçları</p>
-
       <div class="arac-karti">
         <h2>Birikim Hesaplayıcı</h2>
         <p class="arac-aciklama">Mevcut birikimini, aylık yatırımını ve beklenen getiri oranını girerek belirli bir süre sonunda ne kadar birikimine olacağını hesapla.</p>
@@ -232,16 +297,19 @@
         <button class="hesapla-btn" onclick="hesapla()">Hesapla</button>
 
         <div class="sonuc-alan" id="sonucAlan">
-          <div class="sonuc-grid">
+          <div class="sonuc-satir">
             <div class="sonuc-kutu">
               <p class="sonuc-etiket">Toplam Yatırım</p>
               <p class="sonuc-deger" id="toplamYatirim">—</p>
             </div>
+            <div class="sonuc-operator">+</div>
             <div class="sonuc-kutu">
               <p class="sonuc-etiket">Toplam Getiri</p>
               <p class="sonuc-deger" id="toplamGetiri">—</p>
+              <p class="sonuc-yuzde" id="getiriYuzde"></p>
             </div>
-            <div class="sonuc-kutu vurgulu">
+            <div class="sonuc-ok">→</div>
+            <div class="sonuc-kutu-buyuk">
               <p class="sonuc-etiket">Dönem Sonu Birikim</p>
               <p class="sonuc-deger" id="donemSonu">—</p>
             </div>
@@ -282,6 +350,10 @@
       window.scrollTo(0, 0);
     }
 
+    function formatTL(sayi) {
+      return Math.round(sayi).toLocaleString('tr-TR') + ' TL';
+    }
+
     function hesapla() {
       var mevcutBirikim = parseFloat(document.getElementById('mevcutBirikim').value) || 0;
       var aylikYatirim = parseFloat(document.getElementById('aylikYatirim').value) || 0;
@@ -296,13 +368,11 @@
 
       var toplamYatirim = mevcutBirikim + (aylikYatirim * sure);
       var toplamGetiri = donemSonu - toplamYatirim;
-
-      function formatTL(sayi) {
-        return Math.round(sayi).toLocaleString('tr-TR') + ' TL';
-      }
+      var getiriYuzde = ((toplamGetiri / toplamYatirim) * 100).toFixed(1);
 
       document.getElementById('toplamYatirim').textContent = formatTL(toplamYatirim);
       document.getElementById('toplamGetiri').textContent = formatTL(toplamGetiri);
+      document.getElementById('getiriYuzde').textContent = '+' + getiriYuzde + '% getiri';
       document.getElementById('donemSonu').textContent = formatTL(donemSonu);
       document.getElementById('sonucAlan').classList.add('goster');
     }
