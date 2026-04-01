@@ -41,7 +41,6 @@
       font-weight: 500;
       letter-spacing: 1.2px;
       text-transform: uppercase;
-      transition: color 0.2s;
       padding-bottom: 4px;
       border-bottom: 2px solid transparent;
       transition: color 0.2s, border-color 0.2s;
@@ -55,10 +54,13 @@
     .hero {
       background: #0b1120;
       color: white;
-      text-align: center;
-      padding: 4rem 2rem 3.5rem;
+      padding: 4rem 4rem 3.5rem;
       border-bottom: 1px solid rgba(255,255,255,0.06);
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
     }
 
     .hero::after {
@@ -72,36 +74,43 @@
       background: #c9a84c;
     }
 
+    .hero-sol {
+      flex: 1;
+      text-align: center;
+    }
+
     .hero-tag {
       display: block;
-      color: #8a9ab5;
-      font-size: 0.68rem;
+      color: #f0f4f8;
+      font-size: 0.82rem;
       font-weight: 500;
       letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 1.2rem;
+      margin-bottom: 0.8rem;
     }
 
-    .hero h1 {
-      font-family: 'Fraunces', serif;
-      font-size: 2.8rem;
-      line-height: 1.25;
-      color: #ffffff;
-      margin-bottom: 1rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+    .hero p.aciklama {
+      font-size: 0.88rem;
+      color: #5a6a80;
       font-weight: 300;
-      font-style: italic;
-    }
-
-    .hero p {
-      font-size: 0.95rem;
-      color: #8a9ab5;
-      font-weight: 300;
-      max-width: 400px;
-      margin: 0 auto;
       letter-spacing: 0.2px;
+    }
+
+    .hero-sag {
+      flex: 0 0 auto;
+      text-align: right;
+      border-left: 1px solid rgba(255,255,255,0.08);
+      padding-left: 3rem;
+    }
+
+    .hero-sag p {
+      font-family: 'Fraunces', serif;
+      font-size: 1.6rem;
+      color: #c9c9c9;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.4;
+      max-width: 280px;
     }
 
     .container {
@@ -195,9 +204,13 @@
   </header>
 
   <div class="hero">
-    <span class="hero-tag">Yatırım Rehberi</span>
-    <h1>Bilgi de bir yatırımdır.</h1>
-    <p>Yatırım dünyasını sade, anlaşılır ve derinlikli bir şekilde keşfedin.</p>
+    <div class="hero-sol">
+      <span class="hero-tag">Yatırım Rehberi</span>
+      <p class="aciklama">Yatırım dünyasını sade, anlaşılır ve derinlikli bir şekilde keşfedin.</p>
+    </div>
+    <div class="hero-sag">
+      <p>Bilgi de bir yatırımdır.</p>
+    </div>
   </div>
 
   <div class="container">
