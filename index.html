@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yatırım Defteri</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -17,7 +17,7 @@
 
     header {
       background: #0b1120;
-      padding: 1.4rem 4rem;
+      padding: 1.2rem 4rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -25,10 +25,9 @@
     }
 
     .logo {
-      font-family: 'Playfair Display', serif;
+      font-family: 'DM Serif Display', serif;
       font-size: 1.5rem;
       color: #ffffff;
-      letter-spacing: 0.5px;
     }
 
     .logo span { color: #c9a84c; }
@@ -37,9 +36,9 @@
       text-decoration: none;
       color: #8a9ab5;
       margin-left: 2.5rem;
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 500;
-      letter-spacing: 0.8px;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
       transition: color 0.2s;
     }
@@ -50,7 +49,7 @@
       background: #0b1120;
       color: white;
       text-align: center;
-      padding: 7rem 2rem 6rem;
+      padding: 4rem 2rem 3.5rem;
       border-bottom: 1px solid rgba(255,255,255,0.06);
       position: relative;
     }
@@ -61,38 +60,37 @@
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
-      width: 60px;
+      width: 48px;
       height: 2px;
       background: #c9a84c;
     }
 
     .hero-tag {
-      display: inline-block;
-      color: #c9a84c;
-      font-size: 0.7rem;
-      font-weight: 600;
+      display: block;
+      color: #5a6a80;
+      font-size: 0.68rem;
+      font-weight: 500;
       letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 2rem;
+      margin-bottom: 1.2rem;
     }
 
     .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.2rem;
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.6rem;
       line-height: 1.25;
       color: #ffffff;
-      margin-bottom: 1.5rem;
-      font-weight: 700;
-      max-width: 650px;
+      margin-bottom: 1rem;
+      max-width: 600px;
       margin-left: auto;
       margin-right: auto;
     }
 
     .hero p {
-      font-size: 1rem;
-      color: #6b7f99;
+      font-size: 0.95rem;
+      color: #5a6a80;
       font-weight: 300;
-      max-width: 420px;
+      max-width: 400px;
       margin: 0 auto;
       letter-spacing: 0.2px;
     }
@@ -138,12 +136,11 @@
     }
 
     .yazi-karti h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.55rem;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem;
       color: #0b1120;
       margin-bottom: 1.2rem;
       line-height: 1.4;
-      font-weight: 700;
     }
 
     .yazi-karti p {
@@ -165,7 +162,7 @@
     footer {
       background: #0b1120;
       text-align: center;
-      padding: 2.5rem;
+      padding: 2rem;
       font-size: 0.78rem;
       color: #3a4a5c;
       letter-spacing: 0.5px;
@@ -188,14 +185,13 @@
   </header>
 
   <div class="hero">
-    <p class="hero-tag">Yatırım Rehberi</p>
+    <span class="hero-tag">Yatırım Rehberi</span>
     <h1>Bilgi de bir yatırımdır.</h1>
     <p>Yatırım dünyasını sade, anlaşılır ve derinlikli bir şekilde keşfedin.</p>
   </div>
 
   <div class="container">
     <p class="bolum-baslik">Son Yazılar</p>
-
     <div class="yazi-karti">
       <span class="kategori">Temel Kavramlar</span>
       <h2>Yatırım Nedir? Başlangıç İçin Bilmeniz Gereken Her Şey</h2>
@@ -203,7 +199,6 @@
       <p>Paranızı yastık altında tuttuğunuzda enflasyon onu her yıl eritir. Yatırım yapmak, paranızın satın alma gücünü korumak ve artırmak için zorunlu bir adımdır.</p>
       <p class="uyari">Bu içerik bilgi amaçlıdır, yatırım tavsiyesi değildir.</p>
     </div>
-
   </div>
 
   <footer>
