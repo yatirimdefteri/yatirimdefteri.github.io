@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yatırım Defteri</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #f8f8f6;
+      background: #f5f4f0;
       color: #1a1a1a;
       line-height: 1.7;
     }
@@ -25,25 +25,32 @@
     }
 
     .logo {
-      font-family: 'DM Serif Display', serif;
+      font-family: 'Fraunces', serif;
       font-size: 1.5rem;
       color: #ffffff;
+      font-weight: 300;
     }
 
     .logo span { color: #c9a84c; }
 
     nav a {
       text-decoration: none;
-      color: #8a9ab5;
+      color: #e2e8f0;
       margin-left: 2.5rem;
       font-size: 0.78rem;
       font-weight: 500;
       letter-spacing: 1.2px;
       text-transform: uppercase;
       transition: color 0.2s;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
     }
 
-    nav a:hover { color: #ffffff; }
+    nav a:hover {
+      color: #ffffff;
+      border-bottom: 2px solid #c9a84c;
+    }
 
     .hero {
       background: #0b1120;
@@ -67,7 +74,7 @@
 
     .hero-tag {
       display: block;
-      color: #5a6a80;
+      color: #8a9ab5;
       font-size: 0.68rem;
       font-weight: 500;
       letter-spacing: 3px;
@@ -76,19 +83,21 @@
     }
 
     .hero h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2.6rem;
+      font-family: 'Fraunces', serif;
+      font-size: 2.8rem;
       line-height: 1.25;
       color: #ffffff;
       margin-bottom: 1rem;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
+      font-weight: 300;
+      font-style: italic;
     }
 
     .hero p {
       font-size: 0.95rem;
-      color: #5a6a80;
+      color: #8a9ab5;
       font-weight: 300;
       max-width: 400px;
       margin: 0 auto;
@@ -136,11 +145,12 @@
     }
 
     .yazi-karti h2 {
-      font-family: 'DM Serif Display', serif;
+      font-family: 'Fraunces', serif;
       font-size: 1.6rem;
       color: #0b1120;
       margin-bottom: 1.2rem;
       line-height: 1.4;
+      font-weight: 400;
     }
 
     .yazi-karti p {
