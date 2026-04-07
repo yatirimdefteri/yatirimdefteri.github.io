@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -172,6 +173,38 @@
 
     .sonuc-not { font-size: 0.75rem; color: #b0b0a8; font-style: italic; }
 
+    /* Piyasalar sayfası */
+    .piyasa-karti {
+      background: #ffffff;
+      border: 1px solid #e8e8e3;
+      border-radius: 4px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+    .piyasa-baslik {
+      padding: 1.2rem 1.8rem;
+      border-bottom: 1px solid #f0f0ec;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .piyasa-baslik-text {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #c9a84c;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .piyasa-baslik-sembol {
+      font-size: 0.68rem;
+      color: #b0b0a8;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    .piyasa-grafik {
+      height: 420px;
+    }
+
     footer { background: #0b1120; text-align: center; padding: 2rem; font-size: 0.78rem; color: #3a4a5c; letter-spacing: 0.5px; border-top: 1px solid rgba(255,255,255,0.04); }
     footer span { color: #c9a84c; }
   </style>
@@ -266,44 +299,42 @@
       </div>
     </div>
   </div>
-<!-- CANLI PİYASALAR SAYFASI -->
-<div id="piyasalar" class="sayfa">
-  <div class="container">
-    <p class="bolum-baslik">Canlı Piyasalar</p>
-    <div class="yazi-karti" style="padding: 0; overflow: hidden; height: 600px;">
-      <div class="tradingview-widget-container" style="height:100%;width:100%">
-        <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%"></div>
-        <div class="tradingview-widget-copyright"><a href="https://tr.tradingview.com/symbols/BIST-XU100/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-        {
-          "allow_symbol_change": true,
-          "calendar": false,
-          "details": false,
-          "hide_side_toolbar": true,
-          "hide_top_toolbar": false,
-          "hide_legend": false,
-          "hide_volume": false,
-          "hotlist": false,
-          "interval": "D",
-          "locale": "tr",
-          "save_image": true,
-          "style": "1",
-          "symbol": "TVC:GOLD",
-          "theme": "dark",
-          "timezone": "Europe/Istanbul",
-          "backgroundColor": "#0b1120",
-          "gridColor": "rgba(242, 242, 242, 0.06)",
-          "watchlist": [],
-          "withdateranges": false,
-          "compareSymbols": [],
-          "studies": [],
-          "autosize": true
-        }
-        </script>
+
+  <!-- CANLI PİYASALAR SAYFASI -->
+  <div id="piyasalar" class="sayfa">
+    <div class="container" style="max-width: 960px;">
+      <p class="bolum-baslik">Canlı Piyasalar</p>
+
+      <!-- ONS ALTIN -->
+      <div class="piyasa-karti">
+        <div class="piyasa-baslik">
+          <span class="piyasa-baslik-text">Ons Altın</span>
+          <span class="piyasa-baslik-sembol">TVC:GOLD</span>
+        </div>
+        <div class="piyasa-grafik" id="tv-gold"></div>
       </div>
+
+      <!-- ONS GÜMÜŞ -->
+      <div class="piyasa-karti">
+        <div class="piyasa-baslik">
+          <span class="piyasa-baslik-text">Ons Gümüş</span>
+          <span class="piyasa-baslik-sembol">TVC:SILVER</span>
+        </div>
+        <div class="piyasa-grafik" id="tv-silver"></div>
+      </div>
+
+      <!-- DOLAR / TL -->
+      <div class="piyasa-karti">
+        <div class="piyasa-baslik">
+          <span class="piyasa-baslik-text">Dolar / Türk Lirası</span>
+          <span class="piyasa-baslik-sembol">FX:USDTRY</span>
+        </div>
+        <div class="piyasa-grafik" id="tv-usdtry"></div>
+      </div>
+
     </div>
   </div>
-</div>
+
   <!-- ARAÇLAR SAYFASI -->
   <div id="araclar" class="sayfa">
     <div class="container">
@@ -315,7 +346,7 @@
         <div class="form-grid">
           <div class="form-grup">
             <label>Mevcut Birikim (TL)</label>
-           <input type="number" id="mevcutBirikim" placeholder="örn: 1.200.000" step="100000" min="0">
+            <input type="number" id="mevcutBirikim" placeholder="örn: 1.200.000" step="100000" min="0">
           </div>
           <div class="form-grup">
             <label>Aylık Yatırım (TL)</label>
@@ -379,12 +410,55 @@
   </footer>
 
   <script>
+    var tvYuklendi = false;
+
+    function tvWidgetOlustur(containerId, symbol) {
+      new TradingView.widget({
+        container_id: containerId,
+        autosize: true,
+        symbol: symbol,
+        interval: "D",
+        timezone: "Europe/Istanbul",
+        theme: "dark",
+        style: "1",
+        locale: "tr",
+        backgroundColor: "#0b1120",
+        gridColor: "rgba(242, 242, 242, 0.06)",
+        hide_side_toolbar: true,
+        hide_top_toolbar: false,
+        allow_symbol_change: false,
+        save_image: false,
+        withdateranges: true,
+        details: false,
+        hotlist: false,
+        calendar: false,
+      });
+    }
+
+    function piyasalariYukle() {
+      if (tvYuklendi) return;
+      tvYuklendi = true;
+
+      var script = document.createElement('script');
+      script.src = 'https://s3.tradingview.com/tv.js';
+      script.onload = function() {
+        tvWidgetOlustur('tv-gold', 'TVC:GOLD');
+        tvWidgetOlustur('tv-silver', 'TVC:SILVER');
+        tvWidgetOlustur('tv-usdtry', 'FX:USDTRY');
+      };
+      document.head.appendChild(script);
+    }
+
     function sayfaGoster(id, el) {
       document.querySelectorAll('.sayfa').forEach(s => s.classList.remove('aktif'));
       document.querySelectorAll('nav a').forEach(a => a.classList.remove('aktif'));
       document.getElementById(id).classList.add('aktif');
       if (el && el.classList) el.classList.add('aktif');
       window.scrollTo(0, 0);
+
+      if (id === 'piyasalar') {
+        piyasalariYukle();
+      }
     }
 
     function formatTL(sayi) {
