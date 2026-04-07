@@ -455,11 +455,20 @@
       document.getElementById(id).classList.add('aktif');
       if (el && el.classList) el.classList.add('aktif');
       window.scrollTo(0, 0);
+      localStorage.setItem('aktifSayfa', id);
 
       if (id === 'piyasalar') {
         piyasalariYukle();
       }
     }
+
+    (function() {
+      var kayitliSayfa = localStorage.getItem('aktifSayfa');
+      if (kayitliSayfa && document.getElementById(kayitliSayfa)) {
+        var navLink = document.querySelector('nav a[onclick*="' + kayitliSayfa + '"]');
+        sayfaGoster(kayitliSayfa, navLink);
+      }
+    })();
 
     function formatTL(sayi) {
       return Math.round(sayi).toLocaleString('tr-TR') + ' TL';
